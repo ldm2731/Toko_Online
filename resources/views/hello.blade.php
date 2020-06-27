@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    TOKLEN
+                    APIT
                 </div>
 
                 <div class="links">
