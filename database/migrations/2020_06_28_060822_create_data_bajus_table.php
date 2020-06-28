@@ -16,8 +16,8 @@ class CreateDataBajusTable extends Migration
         Schema::create('data_bajus', function (Blueprint $table) {
             $table->id();
             $table->string('nama_baju');
-            $table->interger('harga_baju');
-            $table->interger('stock');
+            $table->biginteger('harga_baju');
+            $table->integer('stock');
             $table->string('gambar');
             $table->timestamps();
         });
