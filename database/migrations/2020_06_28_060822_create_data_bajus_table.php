@@ -15,10 +15,10 @@ class CreateDataBajusTable extends Migration
     {
         Schema::create('data_bajus', function (Blueprint $table) {
             $table->id();
-            $able->string('nama_baju');
-            $able->interger('harga_baju');
-            $able->interger('stock');
-            $able->string('gambar');
+            $table->string('nama_baju');
+            $table->interger('harga_baju');
+            $table->interger('stock');
+            $table->string('gambar');
             $table->timestamps();
         });
     }
