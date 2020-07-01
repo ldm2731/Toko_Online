@@ -15,4 +15,19 @@ class AppController extends Controller
     {
         return view('pages/about');
     }
+
+    public function tshirt()
+    {
+        return view('pages/tshirt');
+    }
+
+    public function jacket()
+    {
+        return view('pages/jacket');
+    }
+
+    public function jersey()
+    {
+        return view('pages/jersey');
+    }
 }

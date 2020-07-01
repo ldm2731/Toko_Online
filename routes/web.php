@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'AppController@home')->name('front.home');
 Route::get('/about', 'AppController@about')->name('front.about');
+
+Route::get('/tshirt', 'AppController@tshirt')->name('front.tshirt');
+Route::get('/jacket', 'AppController@jacket')->name('front.jacket');
+Route::get('/jersey', 'AppController@jersey')->name('front.jersey');
