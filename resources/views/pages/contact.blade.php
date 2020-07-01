@@ -1,28 +1,39 @@
 @extends('hello')
 
 @section('content')
-<div class="container">
-    <div style="text-align:center">
-      <h2>Contact Us</h2>
-      <p>Swing by for a cup of coffee, or leave us a message:</p>
-    </div>
-    <div class="row">
-      <div class="column">
-        <img src="" style="width:100%">
-      </div>
-      <div class="column">
-        <form action="/action_page.php">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-          <label for="city">City</label>
-          <input type="text" id="city" name="city" placeholder="Your city..">
-          <label for="subject">Subject</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-          <input type="submit" value="Submit">
-        </form>
-      </div>
-    </div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container contact-form">
+  <div class="contact-image">
+    <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
   </div>
-  @endsection
+  <form method="post">
+    <h3>Drop Us a Message</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
+        </div>
+        <div class="form-group">
+          <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div> 
+@endsection

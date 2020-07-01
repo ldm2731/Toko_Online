@@ -16,6 +16,11 @@ class AppController extends Controller
         return view('pages/about');
     }
 
+    public function contact()
+    {
+        return view('pages/contact');
+    }
+
     public function tshirt()
     {
         return view('pages/tshirt');
