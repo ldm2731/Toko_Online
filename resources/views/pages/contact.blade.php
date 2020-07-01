@@ -1,3 +1,6 @@
+@extends('hello')
+
+@section('content')
 <div class="container">
     <div style="text-align:center">
       <h2>Contact Us</h2>
@@ -22,3 +25,4 @@
       </div>
     </div>
   </div>
+  @endsection
