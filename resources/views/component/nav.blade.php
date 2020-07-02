@@ -12,9 +12,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('front.about') }}">About</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Services</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="{{ route('front.contact') }}">Contact</a>
         </li>
