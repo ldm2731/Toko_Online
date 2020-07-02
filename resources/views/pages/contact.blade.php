@@ -10,7 +10,7 @@
   <div class="contact-image">
     <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
   </div>
-  <form method="post">
+  <form method="">
     <h3>Drop Us a Message</h3>
     <div class="row">
       <div class="col-md-6">
@@ -24,7 +24,7 @@
           <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
         </div>
         <div class="form-group">
-          <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+          <input onclick="myFunction()" type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
         </div>
       </div>
       <div class="col-md-6">
@@ -37,3 +37,9 @@
 
 </div> 
 @endsection
+
+<script>
+function myFunction() {
+  alert("Thank you for your message. it has been sent");
+}
+</script>
