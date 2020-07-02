@@ -7,7 +7,7 @@
       <div class="col-lg-6">
         <h1 class="display-4">About AM DESAIN</h1>
         <p class="lead text-muted mb-0">Hi, we are AM Desain, is a place for you. You can give your creativity to be more products, 
-        AM Design was established in 2015, Our focus is in the field of Convection and Souvenir, 
+        AM Desain was established in 2015, Our focus is in the field of Convection and Souvenir, 
         we make everything from T-shirts, Jackets, Shirts, Jersey, Polo Almamater etc. . 
         and also what we make are Rubber Souvenirs, Rubber Keychains, Rubber Labels etc.
         </p> 
