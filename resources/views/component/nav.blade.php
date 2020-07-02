@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light" style="background-color:#7b68ee;">
+<nav class="navbar navbar-light" style="background-color:#b583fc;">
   <div class="container">
     <a class="navbar-brand" href="{{ route('front.home') }}">AM DESAIN</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
