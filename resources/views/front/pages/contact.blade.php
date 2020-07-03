@@ -44,8 +44,12 @@
 
 @endsection
 
+@push('script')
+
 <script>
-function myFunction() {
-  alert("Thank you for your message. it has been sent");
-}
+  function myFunction() {
+    alert("Thank you for your message. it has been sent");
+  }
 </script>
+    
+@endpush
