@@ -1,41 +1,47 @@
 @extends('front/hello')
 
 @section('content')
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<style>
+  .row {
+    min-height: 75vh;
+  }
+</style>
 
-<div class="container contact-form">
-  <div class="contact-image">
-    <img src="{{ url('') }}/assets/images/amdesain.png" alt="rocket_contact" />
-  </div>
-  <form method="">
-    <h3>Drop Us a Message</h3>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
-        </div>
-        <div class="form-group">
-          <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
-        </div>
-        <div class="form-group">
-          <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
-        </div>
-        <div class="form-group">
-          <input onclick="myFunction()" type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
-        </div>
+    <div class="row pt-3">
+      <div class="col-md-12">
+        <form method="">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="contact-image">
+                <img src="{{ url('') }}/assets/images/amdesain.png" alt="rocket_contact" />
+              </div>
+              <h3 class="py-3">Drop Us a Message</h3>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
+              </div>
+              <div class="form-group">
+                <input onclick="myFunction()" type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-  </form>
 
-</div> 
+
 @endsection
 
 <script>
