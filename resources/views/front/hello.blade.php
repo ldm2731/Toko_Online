@@ -21,7 +21,7 @@
 <body>
 
   <!-- Navigation -->
-  @include('component.nav')
+  @include('front/component/nav')
 
   <!-- Page Content -->
   <div class="container">

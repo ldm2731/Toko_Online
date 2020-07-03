@@ -1,4 +1,4 @@
-@extends('hello')
+@extends('front/hello')
 
 @section('content')
  <div class="row">

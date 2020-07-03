@@ -8,31 +8,31 @@ class AppController extends Controller
 {
     public function home()
     {
-        return view('pages/home');
+        return view('front/pages/home');
     }
 
     public function about()
     {
-        return view('pages/about');
+        return view('front/pages/about');
     }
 
     public function contact()
     {
-        return view('pages/contact');
+        return view('front/pages/contact');
     }
 
     public function tshirt()
     {
-        return view('pages/tshirt');
+        return view('front/pages/tshirt');
     }
 
     public function jacket()
     {
-        return view('pages/jacket');
+        return view('front/pages/jacket');
     }
 
     public function jersey()
     {
-        return view('pages/jersey');
+        return view('front/pages/jersey');
     }
 }
