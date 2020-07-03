@@ -11,16 +11,7 @@
 
     <div class="row">
 
-      <div class="col-lg-3">
-
-        <h3 class="my-4">Product Category</h3>
-        <div class="list-group">
-          <a href="{{ route('front.tshirt') }}" class="list-group-item">T-Shirt</a>
-          <a href="{{ route('front.jacket') }}" class="list-group-item">Jacket</a>
-          <a href="{{ route('front.jersey') }}" class="list-group-item">Jersey </a>
-        </div>
-
-      </div>
+      @include('front/component/category')
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">

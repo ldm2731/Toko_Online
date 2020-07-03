@@ -21,18 +21,4 @@ class AppController extends Controller
         return view('front/pages/contact');
     }
 
-    public function tshirt()
-    {
-        return view('front/pages/tshirt');
-    }
-
-    public function jacket()
-    {
-        return view('front/pages/jacket');
-    }
-
-    public function jersey()
-    {
-        return view('front/pages/jersey');
-    }
 }
