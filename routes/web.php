@@ -17,3 +17,6 @@ Route::get('/', 'AppController@home')->name('front.home');
 Route::get('/about', 'AppController@about')->name('front.about');
 Route::get('/contact', 'AppController@contact')->name('front.contact');
 
+Route::prefix('admin')->namespace("admin")->name('admin.')->group(function () {
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+});
