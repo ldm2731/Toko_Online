@@ -15,10 +15,12 @@ class CreateDataBajusTable extends Migration
     {
         Schema::create('data_bajus', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('category_id')->unsigned();
             $table->string('nama_baju');
             $table->biginteger('harga_baju');
             $table->integer('stock');
             $table->string('gambar');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
