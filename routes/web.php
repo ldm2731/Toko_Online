@@ -28,4 +28,14 @@ Route::prefix('admin')->namespace("admin")->name('admin.')->group(function () {
         'destroy',
         'update',
     ]);
+
+     // route category
+     Route::get('category/datatable', 'CategoryController@datatable')->name('category.datatable');
+     Route::get('category/destroy/{id}', 'CategoryController@destroy')->name('category.destroy');
+     Route::post('category/update/{id}', 'CategoryController@update')->name('category.update');
+     Route::resource('category', 'CategoryController')->except([
+         'destroy',
+         'update',
+     ]);
+    
 });

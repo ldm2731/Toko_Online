@@ -19,7 +19,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active" href="">
+                <a class="nav-link active" href="{{ route('admin.category.index') }}">
                         <span data-feather="home"></span>
                             Category
                         <span class="sr-only">(current)</span>
@@ -29,23 +29,7 @@
             <li class="nav-item">
                 <a class="nav-link active" href="">
                         <span data-feather="home"></span>
-                            T-Shirt
-                        <span class="sr-only">(current)</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link active" href="">
-                        <span data-feather="home"></span>
-                            Jacket
-                        <span class="sr-only">(current)</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link active" href="">
-                        <span data-feather="home"></span>
-                            Jersey
+                            Product
                         <span class="sr-only">(current)</span>
                 </a>
             </li>
