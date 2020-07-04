@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url('') }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url('')}}/assets/datatables/datatable.min.css">
 
     <style>
       .bd-placeholder-img {
@@ -40,7 +41,7 @@
     <div class="row">
       @include('admin.component.sidebar')
 
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 pt-4">
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
         @yield('content')
       </main>
     </div>
@@ -48,5 +49,6 @@
 
 <script src="{{ url('') }}/assets/vendor/jquery/jquery.min.js"></script>
 <script src="{{ url('') }}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{url('')}}/assets/datatables/datatable.min.js"></script>
 @stack('script')
 </html>
