@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -14,7 +17,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin/pages/user');
+        $data = [
+            'action' => route('admin.user.store'),
+            'method' => 'post',
+        ];
+
+        return view('admin/pages/user', $data);
     }
 
     /**
@@ -35,7 +43,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'username' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'alamat' => 'required',
+            'no_tlpn' => 'required',
+            'role_id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with(['error' => $validator->getMessageBag()->getMessages()])->withInput();
+        } else {
+            $request->merge([
+                'password' => Hash::make($request->password)
+            ]);
+            User::create($request->all());
+            return redirect()->back()->with(['success' => 'Data Saved']);
+        }
     }
 
     /**
