@@ -20,7 +20,6 @@ class UserController extends Controller
     {
         $data = [
             'action' => route('admin.user.store'),
-            'method' => 'post',
         ];
 
         return view('admin/pages/user', $data);
@@ -59,8 +58,8 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'username' => 'required',
-            'email' => 'required',
+            'username' => 'required|unique:users',
+            'email' => 'required|unique:users',
             'password' => 'required',
             'alamat' => 'required',
             'no_tlpn' => 'required',
@@ -97,7 +96,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = [
+            'action' => route('admin.user.update', $id),
+            'data' => User::find($id)
+        ];
+
+        return view('admin/pages/user', $data);
     }
 
     /**
@@ -109,7 +113,53 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'username' => 'required',
+            'email' => 'required',
+            'alamat' => 'required',
+            'no_tlpn' => 'required',
+            'role_id' => 'required',
+        ]);
+
+        $email_check = User::where('id', '!=', $id)->where('email', $request->email)->first();
+        $username_check = User::where('id', '!=', $id)->where('username', $request->username)->first();
+
+        // jika email yang diedit itu milik orang lain
+        if ($email_check) {
+            return redirect()->back()->with(['error' => [
+                'email_duplicate' => ['Email already been taken']
+            ]])->withInput();
+        }
+
+        // jika username yang diedit itu milik orang lain
+        if ($username_check) {
+            return redirect()->back()->with(['error' => [
+                'username_duplicate' => ['Username already been taken']
+            ]])->withInput();
+        }
+
+        if ($validator->fails()) {
+            return redirect()->back()->with(['error' => $validator->getMessageBag()->getMessages()])->withInput();
+        } else {
+            $data_update = [
+                'name',
+                'username',
+                'email',
+                'alamat',
+                'no_tlpn',
+                'role_id',
+            ];
+
+            if ($request->password) {
+                $request->merge([
+                    'password' => Hash::make($request->password)
+                ]);
+                $data_update[] = Hash::make($request->password);
+            }
+            User::where('id', $id)->update($request->only($data_update));
+            return redirect()->route('admin.user.index')->with(['success' => 'Data Updated']);
+        }
     }
 
     /**

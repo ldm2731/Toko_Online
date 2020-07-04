@@ -23,7 +23,9 @@ Route::prefix('admin')->namespace("admin")->name('admin.')->group(function () {
     // route user
     Route::get('user/datatable', 'UserController@datatable')->name('user.datatable');
     Route::get('user/destroy/{id}', 'UserController@destroy')->name('user.destroy');
+    Route::post('user/update/{id}', 'UserController@update')->name('user.update');
     Route::resource('user', 'UserController')->except([
-        'destroy'
+        'destroy',
+        'update',
     ]);
 });

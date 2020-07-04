@@ -6,7 +6,7 @@
 
     @if ($message = Session::get('error'))
       <div class="alert alert-danger">
-        <ul>
+        <ul class="m-0">
           @foreach ($message as $message_index => $message_row)
             <li>{{$message_row[0]}}</li>
           @endforeach
@@ -23,28 +23,28 @@
         <h4 class="p-0 m-0">User Form</h4>
       </div>
       <div class="card-body">
-        <form action="{{$action}}" method="{{$method}}">
+        <form action="{{$action}}" method="post">
           @csrf
           <div class="row">
 
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Your Name *" value="{{(@$v = old('name'))? $v: @$data->name}} " />
+                <input type="text" name="name" class="form-control" placeholder="Your Name *" value="{{(@$v = old('name'))? $v: @$data->name}}" />
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Username</label>
-                <input type="text" name="username" class="form-control" placeholder="Your Name *" value="{{(@$v = old('username'))? $v: @$data->username}} " />
+                <input type="text" name="username" class="form-control" placeholder="Your Name *" value="{{(@$v = old('username'))? $v: @$data->username}}" />
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Your Name *" value="{{(@$v = old('email'))? $v: @$data->email}} " />
+                <input type="email" name="email" class="form-control" placeholder="Your Name *" value="{{(@$v = old('email'))? $v: @$data->email}}" />
               </div>
             </div>
 
@@ -65,7 +65,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Phone Number</label>
-                <input type="text" name="no_tlpn" class="form-control" placeholder="Your Name *" value="{{(@$v = old('no_tlpn'))? $v: @$data->no_tlpn}} " />
+                <input type="text" name="no_tlpn" class="form-control" placeholder="Your Name *" value="{{(@$v = old('no_tlpn'))? $v: @$data->no_tlpn}}" />
               </div>
             </div>
 
@@ -80,6 +80,7 @@
             </div>
 
             <div class="col-md-12 text-right">
+              <a href="{{route('admin.user.index')}}" class="btn btn-outline-danger">Back</a>
               <button class="btn btn-primary">Save</button>
             </div>
 
@@ -128,7 +129,7 @@
           {data: 'alamat'},
           {data: 'role_id'},
           {data: 'no_tlpn'},
-          {data: 'action', searchAble: false, showrtAble: false},
+          {data: 'action', searchable: false, sortable: false},
         ]
       });
     });
