@@ -58,7 +58,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Address</label>
-                <textarea name="alamat" class="form-control">{{(@$v = old('alamat')? $v: @$data->alamat)}} </textarea>
+                <textarea name="alamat" class="form-control">{{(@$v = old('alamat'))? $v: @$data->alamat}}</textarea>
               </div>
             </div>
 
