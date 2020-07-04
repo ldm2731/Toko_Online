@@ -155,7 +155,7 @@ class UserController extends Controller
                 $request->merge([
                     'password' => Hash::make($request->password)
                 ]);
-                $data_update[] = Hash::make($request->password);
+                $data_update[] = 'password';
             }
             User::where('id', $id)->update($request->only($data_update));
             return redirect()->route('admin.user.index')->with(['success' => 'Data Updated']);
