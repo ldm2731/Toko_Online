@@ -40,7 +40,7 @@
                         
                             
                         <div class="form-group">
-                          <input onclick="myFunction()" type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                          <button type="button" class="btn btn-success">Input</button>
                         </div>
                       </div>
                     </div>

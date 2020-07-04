@@ -19,7 +19,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active" href="{{ route('admin.user.index') }}">
+                <a class="nav-link active" href="">
                         <span data-feather="home"></span>
                             Category
                         <span class="sr-only">(current)</span>
