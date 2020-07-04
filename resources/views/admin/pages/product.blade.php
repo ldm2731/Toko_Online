@@ -37,7 +37,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Price</label>
-                <input type="text" name="harga_baju" class="form-control" placeholder="Your Name *" value="{{(@$v = old('harga_baju'))? $v: @$data->harga_baju}}" />
+                <input type="number" name="harga_baju" class="form-control" placeholder="Your Name *" value="{{(@$v = old('harga_baju'))? $v: @$data->harga_baju}}" />
               </div>
             </div>
 

@@ -62,20 +62,18 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'category_id' => 'required',
             'nama_baju' => 'required',
-            'harga_baju' => 'required',
-            'stock' => 'required',
-            'image' => 'required',
+            'harga_baju' => 'required|numeric',
+            'stock' => 'required|numeric',
+            'image' => 'required|mimes:jpg,jpeg,png|max:2000',
         ]);
-
-        $request->request->add([
-            'gambar' => $request->file('image')->store('assets/images/product')
-        ]);
-
-        // dd($request->all(), $validator->getMessageBag()->getMessages());
 
         if ($validator->fails()) {
             return redirect()->back()->with(['error' => $validator->getMessageBag()->getMessages()])->withInput();
         } else {
+
+            $request->request->add([
+                'gambar' => $request->file('image')->store('assets/images/product')
+            ]);
             Data_baju::create($request->all());
             return redirect()->back()->with(['success' => 'Data Saved']);
         }
@@ -121,8 +119,8 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'category_id' => 'required',
             'nama_baju' => 'required',
-            'harga_baju' => 'required',
-            'stock' => 'required',
+            'harga_baju' => 'required|numeric',
+            'stock' => 'required|numeric',
         ]);
 
         $data = Data_baju::find($id);
@@ -138,6 +136,15 @@ class ProductController extends Controller
             ];
 
             if ($request->image) {
+
+                $validator_image = Validator::make($request->all(), [
+                    'image' => 'required|mimes:jpg,jpeg,png|max:2000',
+                ]);
+
+                if ($validator_image->fails()) {
+                    return redirect()->back()->with(['error' => $validator_image->getMessageBag()->getMessages()])->withInput();
+                }
+
                 $request->merge([
                     'gambar' => $request->file('image')->store('assets/images/product')
                 ]);
