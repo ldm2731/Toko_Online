@@ -19,5 +19,11 @@ Route::get('/contact', 'AppController@contact')->name('front.contact');
 
 Route::prefix('admin')->namespace("admin")->name('admin.')->group(function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
-    Route::resource('user', 'UserController');
+
+    // route user
+    Route::get('user/datatable', 'UserController@datatable')->name('user.datatable');
+    Route::get('user/destroy/{id}', 'UserController@destroy')->name('user.destroy');
+    Route::resource('user', 'UserController')->except([
+        'destroy'
+    ]);
 });

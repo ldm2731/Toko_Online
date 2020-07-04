@@ -99,10 +99,12 @@
           <thead>
             <tr>
               <th>Name</th>
+              <th>Username</th>
               <th>Email</th>
               <th>Address</th>
-              <th>Phone Number</th>
               <th>Privillage</th>
+              <th>Phone Number</th>
+              <th>Action</th>
             </tr>
           </thead>
         </table>
@@ -115,7 +117,20 @@
 @push('script')
   <script>
     $(document).ready(function () {
-      $('table').DataTable();
+      $('table').DataTable({
+        "processing": true,
+        "serverSide": true,
+        'ajax': '{{route("admin.user.datatable")}}',
+        'columns': [
+          {data: 'name'},
+          {data: 'username'},
+          {data: 'email'},
+          {data: 'alamat'},
+          {data: 'role_id'},
+          {data: 'no_tlpn'},
+          {data: 'action', searchAble: false, showrtAble: false},
+        ]
+      });
     });
   </script>
 @endpush

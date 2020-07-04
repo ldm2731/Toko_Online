@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use DataTables;
 
 class UserController extends Controller
 {
@@ -23,6 +24,19 @@ class UserController extends Controller
         ];
 
         return view('admin/pages/user', $data);
+    }
+
+    public function datatable()
+    {
+        return DataTables::of(User::all())
+        ->addColumn('action', function(User $user) {
+            return '
+                <a href="'.route('admin.user.edit', $user->id).'" class="btn btn-sm btn-warning">Edit</a>
+                <a href="'.route('admin.user.destroy', $user->id).'" class="btn btn-sm btn-danger">Delete</a>
+            ';
+        })
+        ->escapeColumns([])
+        ->make();
     }
 
     /**
@@ -106,6 +120,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::where('id', $id)->delete();
+        return redirect()->back()->with(['success' => 'Data Deleted']);
     }
 }
