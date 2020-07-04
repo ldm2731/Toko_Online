@@ -38,4 +38,12 @@ Route::prefix('admin')->namespace("admin")->name('admin.')->group(function () {
          'update',
      ]);
     
+     // route product
+     Route::get('product/datatable', 'ProductController@datatable')->name('product.datatable');
+     Route::get('product/destroy/{id}', 'ProductController@destroy')->name('product.destroy');
+     Route::post('product/update/{id}', 'ProductController@update')->name('product.update');
+     Route::resource('product', 'ProductController')->except([
+         'destroy',
+         'update',
+     ]);
 });

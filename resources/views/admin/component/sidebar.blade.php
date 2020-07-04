@@ -27,7 +27,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active" href="">
+                <a class="nav-link active" href="{{ route('admin.product.index') }}">
                         <span data-feather="home"></span>
                             Product
                         <span class="sr-only">(current)</span>
