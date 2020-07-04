@@ -21,13 +21,21 @@
             <li class="nav-item">
                 <a class="nav-link active" href="{{ route('admin.user.index') }}">
                         <span data-feather="home"></span>
+                            Category
+                        <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" href="">
+                        <span data-feather="home"></span>
                             T-Shirt
                         <span class="sr-only">(current)</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active" href="{{ route('admin.user.index') }}">
+                <a class="nav-link active" href="">
                         <span data-feather="home"></span>
                             Jacket
                         <span class="sr-only">(current)</span>
@@ -35,7 +43,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active" href="{{ route('admin.user.index') }}">
+                <a class="nav-link active" href="">
                         <span data-feather="home"></span>
                             Jersey
                         <span class="sr-only">(current)</span>
