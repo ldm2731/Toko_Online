@@ -62,7 +62,7 @@ class UserController extends Controller
             'email' => 'required|unique:users',
             'password' => 'required',
             'alamat' => 'required',
-            'no_tlpn' => 'required',
+            'no_tlpn' => 'required|numeric',
             'role_id' => 'required',
         ]);
 
@@ -118,7 +118,7 @@ class UserController extends Controller
             'username' => 'required',
             'email' => 'required',
             'alamat' => 'required',
-            'no_tlpn' => 'required',
+            'no_tlpn' => 'required|numeric',
             'role_id' => 'required',
         ]);
 

@@ -30,21 +30,21 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Product Name</label>
-                <input type="text" name="nama_baju" class="form-control" placeholder="Your Name *" value="{{(@$v = old('nama_baju'))? $v: @$data->nama_baju}}" />
+                <input type="text" name="nama_baju" class="form-control" placeholder="" value="{{(@$v = old('nama_baju'))? $v: @$data->nama_baju}}" />
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Price</label>
-                <input type="number" name="harga_baju" class="form-control" placeholder="Your Name *" value="{{(@$v = old('harga_baju'))? $v: @$data->harga_baju}}" />
+                <input type="number" name="harga_baju" class="form-control" placeholder="" value="{{(@$v = old('harga_baju'))? $v: @$data->harga_baju}}" />
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Stock</label>
-                <input type="number" name="stock" class="form-control" placeholder="Your Name *" value="{{(@$v = old('stock'))? $v: @$data->stock}}" />
+                <input type="number" name="stock" class="form-control" placeholder="" value="{{(@$v = old('stock'))? $v: @$data->stock}}" />
               </div>
             </div>
 

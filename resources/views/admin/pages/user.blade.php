@@ -30,28 +30,28 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Your Name *" value="{{(@$v = old('name'))? $v: @$data->name}}" />
+                <input type="text" name="name" class="form-control" placeholder="" value="{{(@$v = old('name'))? $v: @$data->name}}" />
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Username</label>
-                <input type="text" name="username" class="form-control" placeholder="Your Name *" value="{{(@$v = old('username'))? $v: @$data->username}}" />
+                <input type="text" name="username" class="form-control" placeholder="" value="{{(@$v = old('username'))? $v: @$data->username}}" />
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Your Name *" value="{{(@$v = old('email'))? $v: @$data->email}}" />
+                <input type="email" name="email" class="form-control" placeholder="" value="{{(@$v = old('email'))? $v: @$data->email}}" />
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Your Name *" value="" />
+                <input type="password" name="password" class="form-control" placeholder="" value="" />
               </div>
             </div>
 
@@ -65,7 +65,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Phone Number</label>
-                <input type="text" name="no_tlpn" class="form-control" placeholder="Your Name *" value="{{(@$v = old('no_tlpn'))? $v: @$data->no_tlpn}}" />
+                <input type="text" name="no_tlpn" class="form-control" placeholder="" value="{{(@$v = old('no_tlpn'))? $v: @$data->no_tlpn}}" />
               </div>
             </div>
 

@@ -17,8 +17,12 @@
       <div class="alert alert-success">{{$message}}</div>
     @endif
   </div>
+  
   <div class="col-md-4">
     <div class="card">
+      <div class="card-header">
+        <h4 class="p-0 m-0">Category Form</h4>
+      </div>
       <div class="card-body">
         <form action="{{$action}}" method="post">
           @csrf
@@ -27,7 +31,7 @@
 
               <div class="form-group">
                 <label for="name">Category Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Your Name *" value="{{(@$v = old('name'))? $v: @$data->name}}" />
+                <input type="text" name="name" class="form-control" placeholder="" value="{{(@$v = old('name'))? $v: @$data->name}}" />
               </div>
 
             </div>
@@ -39,8 +43,8 @@
         </form>
       </div>
     </div>
-
   </div>
+  
   <div class="col-md-8">
     <div class="card">
       <div class="card-header">
