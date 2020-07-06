@@ -64,7 +64,7 @@ class ProductController extends Controller
             'nama_baju' => 'required',
             'harga_baju' => 'required|numeric',
             'stock' => 'required|numeric',
-            'image' => 'required|mimes:jpg,jpeg,png|max:2000',
+            'image' => 'required|mimes:jpg,jpeg,png|max:10000',
         ]);
 
         if ($validator->fails()) {
@@ -138,7 +138,7 @@ class ProductController extends Controller
             if ($request->image) {
 
                 $validator_image = Validator::make($request->all(), [
-                    'image' => 'required|mimes:jpg,jpeg,png|max:2000',
+                    'image' => 'required|mimes:jpg,jpeg,png|max:10000',
                 ]);
 
                 if ($validator_image->fails()) {
