@@ -12,11 +12,15 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('front.about') }}">About</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="{{ route('front.contact') }}">Contact</a>
+        </li>
+        <li class="nav-item">
+          @if (@Auth::user()->id)
+            <a class="nav-link" href="{{route('user.logout')}}">Logout</a>
+          @else
+            <a class="nav-link" href="{{route('user.login')}}">Login</a>
+          @endif
         </li>
       </ul>
     </div>

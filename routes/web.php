@@ -16,8 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'AppController@home')->name('front.home');
 Route::get('/about', 'AppController@about')->name('front.about');
 Route::get('/contact', 'AppController@contact')->name('front.contact');
+Route::get('/contact', 'AppController@contact')->name('front.contact');
+Route::get('/login', 'admin\UserController@login')->name('user.login');
+Route::post('/login', 'admin\UserController@doLogin')->name('user.do.login');
+Route::get('/logout', 'admin\UserController@logout')->name('user.logout');
 
-Route::prefix('admin')->namespace("admin")->name('admin.')->group(function () {
+
+Route::prefix('admin')->namespace("admin")->name('admin.')->middleware('is.admin')->group(function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
     // route user

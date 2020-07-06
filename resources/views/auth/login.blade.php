@@ -1,14 +1,21 @@
-@extends('layouts.app')
+@extends('front/hello')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <div class="col-md-12">
+            @if ($msg =Session::get('error'))
+            <div class="alert alert-danger">
+                <p class="p-0 m-0">{{$msg}}</p>
+            </div>
+            @endif
+        </div>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('user.do.login') }}">
                         @csrf
 
                         <div class="form-group row">

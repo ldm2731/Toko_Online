@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use DataTables;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -23,6 +24,34 @@ class UserController extends Controller
         ];
 
         return view('admin/pages/user', $data);
+    }
+
+    public function login()
+    {
+        return view('auth.login');
+    }
+
+    public function doLogin(Request $request){
+        $credential = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+
+        if (Auth::attempt($credential)) {
+            return redirect()
+                ->route('admin.dashboard')
+                ->with(['succes' => 'login sukses']);
+        }
+
+        return redirect()
+            ->back()
+            ->with(['error' => 'login gagal']);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('front.home');
     }
 
     public function datatable()
