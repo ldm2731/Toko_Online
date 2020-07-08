@@ -22,6 +22,7 @@ Route::post('/login', 'admin\UserController@doLogin')->name('user.do.login');
 Route::get('/logout', 'admin\UserController@logout')->name('user.logout');
 
 
+
 Route::prefix('admin')->namespace("admin")->name('admin.')->middleware('is.admin')->group(function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
@@ -51,4 +52,18 @@ Route::prefix('admin')->namespace("admin")->name('admin.')->middleware('is.admin
          'destroy',
          'update',
      ]);
+});
+Route::namespace("admin")->name('admin.')->middleware('is.admin')->group(function () {
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+
+    // route user
+    Route::get('user/datatable', 'UserController@datatable')->name('user.datatable');
+    Route::get('user/destroy/{id}', 'UserController@destroy')->name('user.destroy');
+    Route::post('user/update/{id}', 'UserController@update')->name('user.update');
+    Route::resource('user', 'UserController')->except([
+        'destroy',
+        'update',
+    ]);
+
+    
 });
