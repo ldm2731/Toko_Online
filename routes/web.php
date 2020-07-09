@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'AppController@home')->name('front.home');
+Route::get('/detail/{id}', 'AppController@detailProduct')->name('front.detail');
+Route::post('/detail/order', 'AppController@orderProduct')->name('front.order');
 Route::get('/about', 'AppController@about')->name('front.about');
 Route::get('/contact', 'AppController@contact')->name('front.contact');
 Route::get('/contact', 'AppController@contact')->name('front.contact');

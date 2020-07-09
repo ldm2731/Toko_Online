@@ -60,11 +60,7 @@
             </div>
             <div class="card-footer">
               <center>
-                {{-- <button type="button" class="btn btn-outline-primary detail" data-name="{{$produk_row->nama_baju}}"
-                  data-img="{{url('').'/'.$produk_row->gambar}}" data-desc="{{$produk_row->harga_baju_format}}">
-                  Add to Chart
-                </button> --}}
-                <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Pesan</a>
+                <a href="{{route('front.detail', $produk_row->id)}}" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Pesan</a>
               </center>
             </div>
           </div>
