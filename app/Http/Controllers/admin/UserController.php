@@ -31,16 +31,22 @@ class UserController extends Controller
         return view('auth.login');
     }
 
-    public function doLogin(Request $request){
+    public function doLogin(Request $request)
+    {
         $credential = [
             'email' => $request->email,
             'password' => $request->password,
         ];
 
         if (Auth::attempt($credential)) {
-            return redirect()
-                ->route('admin.dashboard')
-                ->with(['succes' => 'login sukses']);
+            if (Auth::user()->role_id == 'admin') {
+                return redirect()
+                    ->route('admin.dashboard')
+                    ->with(['succes' => 'login sukses']);
+            }else{
+                return redirect()
+                    ->route('front.home');
+            }
         }
 
         return redirect()
@@ -57,14 +63,14 @@ class UserController extends Controller
     public function datatable()
     {
         return DataTables::of(User::all())
-        ->addColumn('action', function(User $user) {
-            return '
-                <a href="'.route('admin.user.edit', $user->id).'" class="btn btn-sm btn-warning">Edit</a>
-                <a href="'.route('admin.user.destroy', $user->id).'" class="btn btn-sm btn-danger">Delete</a>
+            ->addColumn('action', function (User $user) {
+                return '
+                <a href="' . route('admin.user.edit', $user->id) . '" class="btn btn-sm btn-warning">Edit</a>
+                <a href="' . route('admin.user.destroy', $user->id) . '" class="btn btn-sm btn-danger">Delete</a>
             ';
-        })
-        ->escapeColumns([])
-        ->make();
+            })
+            ->escapeColumns([])
+            ->make();
     }
 
     /**
