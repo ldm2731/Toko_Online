@@ -6,7 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="{{ route('front.home') }}">Home</a>
         </li>
         <li class="nav-item">
@@ -26,3 +26,20 @@
     </div>
   </div>
 </nav>
+
+@push('script')
+  <script>
+    $(document).ready(function () {
+      let menu = $('nav li');
+
+      $.each(menu, function (index, value) { 
+        href = menu.eq(index).find('a').attr('href');
+
+        if (href == `{{Request::url()}}`) {
+          menu.eq(index).find('a').addClass('active');
+        }
+      });
+
+    });
+  </script>
+@endpush
